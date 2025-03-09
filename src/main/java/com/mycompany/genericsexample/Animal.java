@@ -8,6 +8,6 @@ package com.mycompany.genericsexample;
  *
  * @author gavan
  */
-public class Animal {
+public abstract class Animal {
 
 }

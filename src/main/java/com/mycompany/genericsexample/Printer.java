@@ -4,15 +4,13 @@
  */
 package com.mycompany.genericsexample;
 
-import java.util.List;
-
 /**
  *
  * @author gavan
  * @param <T> The type of value the Printer will store and print.
  *
  */
-public class Printer<T extends Animal & List> {
+public class Printer<T extends Animal> {
 
     T value;
 

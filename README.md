@@ -126,4 +126,43 @@ public class Printer<T extends Animal & List> {}
     - must list class name first, with interfaces afterwards
 
 # Generic Methods
-- 
+- To use a generic type with a method, place the generic type before the return
+type in the signature:
+
+```java
+private static <T> void shout(T value) {}
+```
+- We can use multiple generic args:
+```java
+private static <T, V> void shout(T arg1, V arg2) {}
+```
+
+- We can returns items of a generic type:
+```java
+private static <T, V> T shout(T arg1, V arg2) {}
+```
+
+# Wildcards
+- Example, create a method that can take in a list (any type) and print out the list
+- we could try:
+```java
+private static void printList(List<Object> myList) {
+        System.out.println();
+    }
+```
+- and then:
+```java
+ List<Integer> intList = new ArrayList<>();
+        intList.add(3);
+        printList(intList); // Error: List<Integer> can't be converted to List<Object>
+```
+- List<Integer> can't be converted to List<Object>
+- To solve, use a wildcard:
+```java
+    private static void printList(List<?> myList) {}
+```
+- You can also have bounded wildcards:
+```java
+  private static void printList(List<? extends Animal> myList) {}
+```
+- above will error if you pass in a list of integers or strings
